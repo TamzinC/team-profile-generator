@@ -1,5 +1,5 @@
 // creates the team
-const generateTeam = team => {
+
 
     // creates the manager html
     const generateManager = manager => {
@@ -58,6 +58,7 @@ const generateTeam = team => {
         `;
     };
 
+    const generateTeam = team => {
     const html = [];
 
     html.push(team

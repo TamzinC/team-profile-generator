@@ -11,11 +11,14 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 
 
+const employeeDetails = [];
+
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 function generateManager() {
-    return inquirer.prompt({
+    return inquirer.prompt([{
         name: 'managerName',
-        message: "Please enter the Team Manager's name."
+        message: "Please enter the Team Manager's name.",
+        type: 'input'
     },
     {
         name: 'managerID',
@@ -28,13 +31,13 @@ function generateManager() {
     {
         name: 'officeNumber',
         message: 'Please enter the office number'
-    }).then(data => {
-        console.log(data);
+    }]).then(data => {
+        employeeDetails.push(new Manager(data.managerName, data.managerID, data.managerEmail, data.officeNumber));
     })
 }
 
 function generateEngineer() {
-    return inquirer.prompt({
+    return inquirer.prompt([{
         name: 'engineerName',
         message: "Please enter the Engineer's name."
     },
@@ -49,13 +52,13 @@ function generateEngineer() {
     {
         name: 'gitHubID',
         message: 'Please enter their GitHub username'
-    }).then(data => {
-        console.log(data);
+    }]).then(data => {
+        employeeDetails.push(data);
     })
 }
 
 function generateIntern() {
-    return inquirer.prompt({
+    return inquirer.prompt([{
         name: 'internName',
         message: "Please enter the intern's name."
     },
@@ -70,13 +73,13 @@ function generateIntern() {
     {
         name: 'school',
         message: 'Please enter their school name'
-    }).then(data => {
-        console.log(data);
+    }]).then(data => {
+        employeeDetails.push(data);
     })
 }
 
 function showMainMenu() {
-    inquirer.prompt({
+    return inquirer.prompt({
         type: 'list',
         name: 'options',
         message: 'Please select an option',
@@ -95,11 +98,9 @@ function showMainMenu() {
             }
         ]
     }).then(choice => {
-        if (choice.option === 'engineer') return generateEngineer();
-        if (choice.option === 'intern') return generateIntern();
+        if (choice.options === 'engineer') return generateEngineer().then(showMainMenu);
+        if (choice.options === 'intern') return generateIntern().then(showMainMenu);
 
-        console.log('----Thank you for using the Course Manager App!----');
-        process.exit(render);
     })
 }
 
@@ -107,7 +108,18 @@ function showMainMenu() {
 function init() {
     console.log('----Welcome to the Course Manager App!-----');
 
-    generateManager().then(showMainMenu);
+    generateManager().then(showMainMenu).then(() => {
+        console.log(employeeDetails);
+        const html = render(employeeDetails);
+        console.log(html);
+        fs.writeFile('./output/team.html', html, (error) => {
+            if (error) {
+                return console.log(error);
+            } else{
+                console.log('----Thank you for using the Course Manager App!----');
+            }
+        });
+    });
 }
 
 init();
