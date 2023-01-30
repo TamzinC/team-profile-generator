@@ -1,0 +1,32 @@
+/* RESETS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* CUSTOM STYLES */
+.jumbotron {
+    /* background-color: #89BDA7; */
+    background-color: #71AD94;
+    color: #fff;
+}
+
+.employee-card {
+  margin: 15px;
+}
+
+.card-header {
+    background-color: #8ABCA7;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.card-header h3 {
+    font-size: 20px;
+}
