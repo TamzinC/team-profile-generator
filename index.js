@@ -126,7 +126,6 @@ function init() {
 
         // Storing a variable with the render function which will allow the saved array to be added to the html file that is being generated
         const html = render(employeeDetails);
-        console.log(html);
 
         //Creating the html file 
         fs.writeFile('./output/team.html', html, (error) => {
