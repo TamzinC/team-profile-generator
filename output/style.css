@@ -1,37 +1,46 @@
 /* RESETS */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 /* CUSTOM STYLES */
 .jumbotron {
-    background-color: #4A826B;
-    color: #fff;
+  background-color: #4a826b;
+  color: #fff;
+}
+
+.display-team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 10px;
 }
 
 .employee-card {
   margin: 15px;
   margin-top: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* width: 350px; */
 }
 
 .card-header {
-    background-color: #71AD94;
-    color: #fff;
-    text-transform: capitalize;
-    text-align: center;
+  background-color: #71ad94;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .card-header h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .intern {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
