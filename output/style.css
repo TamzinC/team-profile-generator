@@ -11,17 +11,18 @@ html, body {
 
 /* CUSTOM STYLES */
 .jumbotron {
-    /* background-color: #89BDA7; */
-    background-color: #71AD94;
+    background-color: #4A826B;
     color: #fff;
 }
 
 .employee-card {
   margin: 15px;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
 }
 
 .card-header {
-    background-color: #8ABCA7;
+    background-color: #71AD94;
     color: #fff;
     text-transform: capitalize;
     text-align: center;
@@ -29,4 +30,8 @@ html, body {
 
 .card-header h3 {
     font-size: 20px;
+}
+
+.intern {
+    text-transform: capitalize;
 }
