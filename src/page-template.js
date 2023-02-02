@@ -3,7 +3,7 @@
 // creates the manager html
 const generateManager = (manager) => {
   return `
-        <div class="card employee-card">
+        <div class="card employee-card col-4">
         <div class="card-header">
             <h2 class="card-title">${manager.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
@@ -22,7 +22,7 @@ const generateManager = (manager) => {
 // creates the html for engineers
 const generateEngineer = (engineer) => {
   return `
-        <div class="card employee-card">
+        <div class="card employee-card col-4">
     <div class="card-header">
         <h2 class="card-title">${engineer.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
@@ -41,7 +41,7 @@ const generateEngineer = (engineer) => {
 // creates the html for interns
 const generateIntern = (intern) => {
   return `
-        <div class="card employee-card">
+        <div class="card employee-card col-4">
     <div class="card-header">
         <h2 class="card-title">${intern.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
@@ -113,6 +113,11 @@ module.exports = (team) => {
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
 </body>
 </html>
     `;
